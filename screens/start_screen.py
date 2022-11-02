@@ -12,7 +12,7 @@ pygame.display.set_caption("SNAKE")
 class StartScreen():
     def __init__(self):
         self.player_name = ""
-        self.background = pygame.image.load("resources/menu.png")
+        self.background = pygame.image.load("resources/screens/menu.png")
 
     def show(self):
 

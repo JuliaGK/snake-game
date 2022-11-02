@@ -7,7 +7,7 @@ from screens.game import SIZE
 class Food:
     def __init__(self, parent_screen):
         self.parent_screen = parent_screen
-        self.image = pygame.image.load("resources/apple.png").convert_alpha() 
+        self.image = pygame.image.load("resources/foods/apple.png").convert_alpha() 
         self.x = 120
         self.y = 120
 

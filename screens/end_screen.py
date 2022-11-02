@@ -7,7 +7,7 @@ from pygame.locals import *
 class EndScreen():
     def __init__(self, scores):
         self.scores = scores
-        self.background = pygame.image.load("resources/end_screen.png")
+        self.background = pygame.image.load("resources/screens/end_screen.png")
 
     def show(self):
 

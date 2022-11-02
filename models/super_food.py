@@ -7,7 +7,7 @@ from screens.game import SIZE
 class SuperFood:
     def __init__(self, parent_screen):
         self.parent_screen = parent_screen
-        self.image = pygame.image.load("resources/golden.png").convert_alpha() 
+        self.image = pygame.image.load("resources/foods/golden.png").convert_alpha() 
         self.x = 350
         self.y = 350
         self.show = False

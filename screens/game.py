@@ -34,19 +34,19 @@ class Game:
         self.player = player
 
     def play_background_music(self):
-        pygame.mixer.music.load("resources/background.mp3")
+        pygame.mixer.music.load("resources/sound/background.mp3")
         pygame.mixer.music.set_volume(0.4)
         pygame.mixer.music.play(-1, 0)
 
     def play_sound(self, sound_name):
         if sound_name == "crash":
-            sound = pygame.mixer.Sound("resources/impact.ogg")
+            sound = pygame.mixer.Sound("resources/sound/impact.ogg")
             sound.set_volume(1)
         elif sound_name == "food":
-            sound = pygame.mixer.Sound("resources/food.ogg")
+            sound = pygame.mixer.Sound("resources/sound/food.ogg")
             sound.set_volume(0.2)
         elif sound_name == "power_up":
-            sound = pygame.mixer.Sound("resources/powerUp.ogg")
+            sound = pygame.mixer.Sound("resources/sound/powerUp.ogg")
             sound.set_volume(0.3)
 
         pygame.mixer.Sound.play(sound)
