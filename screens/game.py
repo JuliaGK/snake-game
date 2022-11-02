@@ -7,7 +7,7 @@ import models.scores as scores
 import models.player as player
 import models.super_food as super_food
 
-from screens.game_over import GameOverScreen
+from screens.end_screen import EndScreen
 
 from pygame.locals import *
 import time
@@ -97,7 +97,7 @@ class Game:
     def display_score(self):
         font = pygame.font.Font("resources/font.ttf", 30)
         score = font.render(f"SCORE: {self.snake.length}", True, FONT_COLOR)
-        SCREEN.blit(score, (800,10))
+        SCREEN.blit(score, (750,10))
     
     def control_sleep_time(self):
         snake_size = self.snake.length
@@ -143,7 +143,7 @@ class Game:
                     self.play()
             except Exception as e:
                 self.scores.set_last_score(self.snake.length)
-                gameOver = GameOverScreen(self.scores)
+                gameOver = EndScreen(self.scores)
                 gameOver.show()
                 self.reset()
 

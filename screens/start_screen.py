@@ -37,6 +37,8 @@ class StartScreen():
                     gameScreen.run()
                     click = False
 
+            click = False
+            
          #  pygame.draw.rect(SCREEN, (255, 255, 255, 0), button_play)
 
             player_name_line = font_big.render(self.player_name, True, FONT_COLOR)
