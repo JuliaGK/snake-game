@@ -15,18 +15,18 @@ class StartScreen():
         self.background = pygame.image.load("resources/menu.png")
     def show(self) -> str:
 
-        font_big = pygame.font.Font("resources/font.ttf", 40)        
+        font_big = pygame.font.Font("resources/font.ttf", 45)        
 
         click = False
         running = True
         while running:
 
-#            SCREEN.blit(self.background(0,0))
+            SCREEN.blit(self.background,(0,0))
             
             mx, my = pygame.mouse.get_pos()
 
-            button_play = pygame.Rect(200,50,200,50)
-            button_play.center = (1000/2, 500)
+            button_play = pygame.Rect(340,100,340,100)
+            button_play.center = (1000/2, 685)
 
             if button_play.collidepoint((mx,my)):
                 if click:
@@ -37,13 +37,12 @@ class StartScreen():
                     gameScreen.run()
                     click = False
 
+         #  pygame.draw.rect(SCREEN, (255, 255, 255, 0), button_play)
 
-            pygame.draw.rect(SCREEN, (81, 163, 46), button_play)
-
-            line2 = font_big.render(self.player_name, True, FONT_COLOR)
-            line2_rect = line2.get_rect(center=(1000/2, 350))
+            player_name_line = font_big.render(self.player_name, True, FONT_COLOR)
+            player_name_rect = player_name_line.get_rect(center=(1000/2, 520))
             
-            SCREEN.blit(line2, line2_rect)
+            SCREEN.blit(player_name_line, player_name_rect)
             
 
             for event in pygame.event.get():

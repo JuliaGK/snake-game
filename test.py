@@ -1,4 +1,4 @@
 from models.scores import *
 
-obj = Scores("JULIA")
+obj = Scores("test")
 obj.update_scores_list(65)
