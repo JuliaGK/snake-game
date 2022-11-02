@@ -13,21 +13,24 @@ class StartScreen():
     def __init__(self):
         self.player_name = ""
         self.background = pygame.image.load("resources/menu.png")
-    def show(self) -> str:
 
-        font_big = pygame.font.Font("resources/font.ttf", 45)        
+    def show(self):
+
+        font_players_name = pygame.font.Font("resources/font.ttf", 45)        
+
+        # Button play rect
+        button_play = pygame.Rect(340,100,340,100)
+        button_play.center = (1000/2, 685)
+
 
         click = False
         running = True
-        while running:
+        while running:   
 
             SCREEN.blit(self.background,(0,0))
-            
+
+            # Button play mechanic
             mx, my = pygame.mouse.get_pos()
-
-            button_play = pygame.Rect(340,100,340,100)
-            button_play.center = (1000/2, 685)
-
             if button_play.collidepoint((mx,my)):
                 if click:
                     running = False
@@ -39,14 +42,13 @@ class StartScreen():
 
             click = False
             
-         #  pygame.draw.rect(SCREEN, (255, 255, 255, 0), button_play)
-
-            player_name_line = font_big.render(self.player_name, True, FONT_COLOR)
+            # Player's name input
+            player_name_line = font_players_name.render(self.player_name, True, FONT_COLOR)
             player_name_rect = player_name_line.get_rect(center=(1000/2, 520))
             
             SCREEN.blit(player_name_line, player_name_rect)
             
-
+            # Event input
             for event in pygame.event.get():
                 if event.type == QUIT:
                     pygame.quit()

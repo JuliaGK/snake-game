@@ -22,7 +22,7 @@ class SuperFood:
     
     def randomize_show(self):
         if not self.show:
-            rand = random.randint(1,5)
+            rand = random.randint(1,10)
             if rand == 1:
                 self.show = True
                 self.move()

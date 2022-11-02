@@ -47,7 +47,6 @@ class Scores():
             for row in csvreader:
                 score = self.format_score(str(row[0]))
                 top_5.append(font.render(f"{score} {row[1]}", True, FONT_COLOR))
-                
         return top_5
     
     def format_score(self, score):

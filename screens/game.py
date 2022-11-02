@@ -37,7 +37,6 @@ class Game:
         pygame.mixer.music.load("resources/background.mp3")
         pygame.mixer.music.set_volume(0.4)
         pygame.mixer.music.play(-1, 0)
-        pass
 
     def play_sound(self, sound_name):
         if sound_name == "crash":
