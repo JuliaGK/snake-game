@@ -14,9 +14,7 @@ import time
 
 class Game:
     def __init__(self, player):
-        pygame.init()
-        pygame.display.set_caption("Snake game")
-
+        
         pygame.mixer.init()
         self.play_background_music()
 

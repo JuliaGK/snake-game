@@ -40,7 +40,7 @@ class Scores():
         self.highest_scores.sort(reverse=True)
 
     def get_list_strings_top_5(self):
-        font = pygame.font.Font("resources/font.ttf", 40)
+        font = pygame.font.Font("resources/font.ttf", 35)
         top_5 = []
         with open("scores.csv", "r") as file:
             csvreader = csv.reader(file)

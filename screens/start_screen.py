@@ -7,7 +7,7 @@ from global_variables import *
 from pygame.locals import *
 
 pygame.init()
-pygame.display.set_caption("SNAKE")
+pygame.display.set_caption("Snake Game")
 
 class StartScreen():
     def __init__(self):
