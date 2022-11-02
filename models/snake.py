@@ -1,3 +1,4 @@
+import random
 import pygame
 from pygame.locals import *
 
@@ -6,8 +7,9 @@ from screens.game import SIZE
 class Snake:
     def __init__(self, parent_screen):
         self.parent_screen = parent_screen
-        self.block_head = pygame.image.load("resources/snake_head_orange_down.png").convert_alpha()
-        self.block_tail = pygame.image.load("resources/snake_body_orange.png").convert_alpha() 
+        self.color = self.randomize_color()
+        self.block_head = pygame.image.load(f"resources/snake/{self.color}/head_down.png").convert_alpha()
+        self.block_tail = pygame.image.load(f"resources/snake/{self.color}/body_down.png").convert_alpha() 
         self.direction = "down"
         self.increase = 0
         self.length = 1
@@ -16,19 +18,23 @@ class Snake:
         
     def move_left(self):
         self.direction = "left"
-        self.block_head = pygame.image.load("resources/snake_head_orange_left.png").convert_alpha()
+        self.block_head = pygame.image.load(f"resources/snake/{self.color}/head_left.png").convert_alpha()
+        self.block_tail = pygame.image.load(f"resources/snake/{self.color}/body_left.png").convert_alpha() 
     
     def move_right(self):
         self.direction = "right"
-        self.block_head = pygame.image.load("resources/snake_head_orange_right.png").convert_alpha()
+        self.block_head = pygame.image.load(f"resources/snake/{self.color}/head_right.png").convert_alpha()
+        self.block_tail = pygame.image.load(f"resources/snake/{self.color}/body_right.png").convert_alpha() 
 
     def move_up(self):
         self.direction = "up"
-        self.block_head = pygame.image.load("resources/snake_head_orange_up.png").convert_alpha()
+        self.block_head = pygame.image.load(f"resources/snake/{self.color}/head_up.png").convert_alpha()
+        self.block_tail = pygame.image.load(f"resources/snake/{self.color}/body_up.png").convert_alpha() 
 
     def move_down(self):
         self.direction = "down"
-        self.block_head = pygame.image.load("resources/snake_head_orange_down.png").convert_alpha()
+        self.block_head = pygame.image.load(f"resources/snake/{self.color}/head_down.png").convert_alpha()
+        self.block_tail = pygame.image.load(f"resources/snake/{self.color}/body_down.png").convert_alpha() 
 
     def walk(self):
 
@@ -75,3 +81,9 @@ class Snake:
     def increase_length(self, blocks):
         self.increase += blocks
     
+    def randomize_color(self):
+        rand = random.randint(1,2)
+        if rand == 1:
+            return "orange"
+        else:
+            return "blue"
